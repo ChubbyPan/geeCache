@@ -20,7 +20,7 @@ type Value interface {
 	Len() int
 }
 
-func New(maxBytes int64, onEvicted func(string, Value)) *Cache {
+func NewLRUCache(maxBytes int64, onEvicted func(string, Value)) *Cache {
 	return &Cache{
 		maxBytes:  maxBytes,
 		ll:        list.New(),
