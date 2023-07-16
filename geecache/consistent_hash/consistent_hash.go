@@ -41,6 +41,7 @@ func (m *Map) Add(keys ...string) {
 	sort.Ints(m.keys)
 }
 
+// input key, caculate key's hash, return key's real node
 func (m *Map) Get(key string) string {
 	if len(m.keys) == 0 {
 		return ""
